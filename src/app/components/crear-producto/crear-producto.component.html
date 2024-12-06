@@ -10,10 +10,11 @@
             (ngSubmit)="agregarProducto()"
           >
             <div class="mb-3">
+              <label for="producto" class="form-label">Producto</label>
               <input
+                id="producto"
                 type="text"
                 class="form-control form-control-lg"
-                placeholder="Producto"
                 formControlName="producto"
               />
               <div
@@ -27,44 +28,29 @@
               </div>
             </div>
             <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad</label>
               <input
-                type="text"
-                class="form-control form-control-lg"
-                placeholder="Categoria"
-                formControlName="categoria"
-              />
-              <div
-                class="text-danger"
-                *ngIf="
-                  productoForm.get('categoria')?.hasError('required') &&
-                  productoForm.get('categoria')?.touched
-                "
-              >
-                La categoria es <strong>obligatoria</strong>
-              </div>
-            </div>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control form-control-lg"
-                placeholder="Ubicacion"
-                formControlName="ubicacion"
-              />
-              <div
-                class="text-danger"
-                *ngIf="
-                  productoForm.get('ubicacion')?.hasError('required') &&
-                  productoForm.get('ubicacion')?.touched
-                "
-              >
-                La ubicacion es <strong>obligatoria</strong>
-              </div>
-            </div>
-            <div class="mb-3">
-              <input
+                id="cantidad"
                 type="number"
                 class="form-control form-control-lg"
-                placeholder="Precio"
+                formControlName="cantidad"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productoForm.get('cantidad')?.hasError('required') &&
+                  productoForm.get('cantidad')?.touched
+                "
+              >
+                La cantidad es <strong>obligatoria</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="precio" class="form-label">Precio</label>
+              <input
+                id="precio"
+                type="number"
+                class="form-control form-control-lg"
                 formControlName="precio"
               />
               <div
@@ -84,7 +70,11 @@
               >
                 VOLVER
               </button>
-              <button type="submit" [disabled]="productoForm.invalid" class="btn btn-success btn-lg float-end">
+              <button
+                type="submit"
+                [disabled]="productoForm.invalid"
+                class="btn btn-success btn-lg float-end"
+              >
                 ACEPTAR
               </button>
             </div>

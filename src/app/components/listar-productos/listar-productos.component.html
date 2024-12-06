@@ -4,35 +4,31 @@
       <div class="card">
         <div class="card-body text-center">
           <span class="titulo">LISTADO DE PRODUCTOS</span>
-          <button class="btn btn-success float-end" routerLink="/crear-producto">NUEVO</button>
+          <button
+            class="btn btn-success float-end"
+            routerLink="/crear-producto"
+          >
+            NUEVO
+          </button>
           <table class="table table-striped mt-3">
             <thead>
               <tr>
                 <th scope="col">Producto</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Ubicacion</th>
+                <th scope="col">Cantidad</th>
                 <th scope="col">Precio</th>
-                <th scope="col"></th>
+                <th scope="col">Acción</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>asdasd</td>
-                <td>asdasd</td>
+              <tr *ngFor="let producto of productos">
+                <td>{{ producto.producto }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>{{ producto.precio | currency:'ARS' }}</td>
                 <td>
-                  <i class="fa-solid fa-pen-to-square text-primary"></i>
-                  <i class="fa-solid fa-trash text-danger"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>asdasd</td>
-                <td>iuoiweurwe</td>
-                <td>
-                  <i class="fa-solid fa-pen-to-square text-primary"></i>
+                  <i
+                    class="fa-solid fa-pen-to-square text-primary"
+                    [routerLink]="['/editar-producto', producto.id]"
+                  ></i>
                   <i class="fa-solid fa-trash text-danger"></i>
                 </td>
               </tr>

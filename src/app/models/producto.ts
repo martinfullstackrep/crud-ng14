@@ -1,19 +1,6 @@
-export class Producto {
-  _id?: Number;
-  nombre: string;
-  categoria: string;
-  ubicacion: string;
+export interface Producto {
+  id?: string;
+  producto: string;
+  cantidad: number;
   precio: number;
-
-  constructor(
-    nombre: string,
-    categoria: string,
-    ubicacion: string,
-    precio: number
-  ) {
-    this.nombre = nombre;
-    this.categoria = categoria;
-    this.ubicacion = ubicacion;
-    this.precio = precio;
-  }
 }
