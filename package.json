@@ -1,9 +1,10 @@
 {
-  "name": "mean-front",
+  "name": "crud-ng14",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"npm run start:ng\" \"npm run start:server\"",
+    "start:ng": "ng serve",
     "start:server": "json-server src/assets/db.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -32,6 +33,7 @@
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
     "@types/node": "^16.11.10",
+    "concurrently": "^9.1.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
